@@ -7,7 +7,6 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-
     public float speed = 1f;
     Rigidbody2D rb2d;
     public float hSpeed = 10f, vSpeed = 6f;
@@ -150,7 +149,7 @@ public class PlayerController : MonoBehaviour
         }
         if (other.tag == "WinDoor")
         {
-            bool win = true;
+             win = true;
             //player wins the game
             winText.text = "YOU WIN!!!!!";
             
@@ -162,7 +161,7 @@ public class PlayerController : MonoBehaviour
     IEnumerator Timer()
     {
         //while the timer is above 0
-        while (time > 0)
+		while (time > 0 && win == false)
         {
             //wait for one second
             yield return new WaitForSeconds(1);
